@@ -16,7 +16,7 @@ self: super:
              -H "Authorization: Bearer ${builtins.getEnv "GITHUB_TOKEN"}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              https://api.github.com/repos/ghostty-org/ghostty/releases/assets/181937392 \
-             --output ghostty.zip -k
+             --output ghostty.zip -kv
 
         unzip ghostty.zip -d "$sourceRoot"
         runHook postUnpack
