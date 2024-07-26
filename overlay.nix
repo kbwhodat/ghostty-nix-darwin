@@ -1,6 +1,6 @@
 self: super:
 {
-  ghosttyPackage = edition:
+  ghostty-darwin = edition:
     super.stdenv.mkDerivation rec {
       pname = "Ghostty";
   
