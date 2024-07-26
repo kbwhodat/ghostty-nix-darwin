@@ -1,0 +1,1 @@
+# ghostty-nix-darwin
