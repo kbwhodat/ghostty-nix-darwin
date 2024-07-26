@@ -1,4 +1,4 @@
-self: super:
+{ githubToken }: self: super:
 {
   ghostty-darwin = super.stdenv.mkDerivation rec {
       pname = "Ghostty";
@@ -13,7 +13,7 @@ self: super:
         runHook preUnpack
 
         curl -L -H "Accept: application/octet-stream" \
-             -H "Authorization: Bearer ${builtins.getEnv "GITHUB_TOKEN"}" \
+             -H "Authorization: Bearer ${githubToken}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              https://api.github.com/repos/ghostty-org/ghostty/releases/assets/181937392 \
              --output ghostty.zip -kv
