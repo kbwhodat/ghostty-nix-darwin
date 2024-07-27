@@ -28,6 +28,9 @@
         mkdir -p $out/Applications
         cp -r Ghostty.app "$out/Applications/"
 
+        mkdir -p $out/bin
+        ln -s ../Applications/Ghostty.app/Contents/MacOS/ghostty "$out/bin/ghostty"
+
         runHook postInstall
       '';
 
