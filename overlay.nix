@@ -15,7 +15,7 @@
         curl -L -H "Accept: application/octet-stream" \
              -H "Authorization: Bearer ${githubToken}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
-             https://api.github.com/repos/ghostty-org/ghostty/releases/assets/181937392 \
+             https://api.github.com/repos/ghostty-org/ghostty/releases/assets/182045217 \
              --output ghostty.zip -kv
 
         unzip ghostty.zip -d "$sourceRoot"
