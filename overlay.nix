@@ -12,12 +12,8 @@
       unpackPhase = ''
         runHook preUnpack
 
-        wget --header="Accept: application/octet-stream" \
-             --header="Authorization: Bearer ${githubToken}" \
-             --header="X-GitHub-Api-Version: 2022-11-28" \
-             -O ghostty.zip \
-             https://api.github.com/repos/ghostty-org/ghostty/releases/assets/211402665 \
-             --verbose
+        export SSL_CERT_FILE="${super.cacert}/etc/ssl/certs/ca-certificates.crt"
+        wget --header="Accept: application/octet-stream" --header="Authorization: Bearer ${githubToken}" --header="X-GitHub-Api-Version: 2022-11-28" -O ghostty.zip https://api.github.com/repos/ghostty-org/ghostty/releases/assets/211402665 --verbose
 
         unzip ghostty.zip -d "$sourceRoot"
         runHook postUnpack
