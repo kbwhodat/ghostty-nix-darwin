@@ -1,4 +1,4 @@
-{ }: self: super:
+{ githubToken }: self: super:
 {
   ghostty-darwin = super.stdenv.mkDerivation rec {
     pname = "Ghostty";
