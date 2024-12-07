@@ -16,7 +16,7 @@
              -H "Authorization: Bearer ${githubToken}" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              https://api.github.com/repos/ghostty-org/ghostty/releases/assets/211402665 \
-             --output ghostty.zip -kv
+             --output ghostty.zip -v
 
         unzip ghostty.zip -d "$sourceRoot"
         runHook postUnpack
