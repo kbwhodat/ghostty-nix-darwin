@@ -4,7 +4,7 @@
       pname = "Ghostty";
       version = "tip";
 
-      buildInputs = [ super.unzip super.curl ];
+      buildInputs = [ super.unzip super.curl super.cacert ];
       sourceRoot = ".";
 
       phases = [ "unpackPhase" "installPhase" ];
