@@ -4,7 +4,7 @@
       pname = "Ghostty";
       version = "tip";
 
-      buildInputs = [ super.unzip super.wget super.cacert ];
+      buildInputs = [ super.unzip super.wget ];
       sourceRoot = ".";
 
       phases = [ "unpackPhase" "installPhase" ];
@@ -12,8 +12,7 @@
       unpackPhase = ''
         runHook preUnpack
 
-        export SSL_CERT_FILE="${super.cacert}/etc/ssl/certs/ca-certificates.crt"
-        wget --header="Accept: application/octet-stream" --header="Authorization: Bearer ${githubToken}" --header="X-GitHub-Api-Version: 2022-11-28" -O ghostty.zip https://api.github.com/repos/ghostty-org/ghostty/releases/assets/211402665 --verbose
+        wget -O ghostty.zip "https://github.com/ghostty-org/ghostty/releases/download/${version}/ghostty-macos-universal.zip" --verbose
 
         unzip ghostty.zip -d "$sourceRoot"
         runHook postUnpack
