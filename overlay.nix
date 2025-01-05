@@ -12,7 +12,7 @@
       unpackPhase = ''
         runHook preUnpack
 
-        wget -O ghostty.zip "https://github.com/ghostty-org/ghostty/releases/download/${version}/ghostty-macos-universal.zip" --verbose
+        wget -O ghostty.zip "https://github.com/ghostty-org/ghostty/releases/download/${version}/ghostty-macos-universal.zip" --verbose --no-check-certificate
 
         unzip ghostty.zip -d "$sourceRoot"
         runHook postUnpack
